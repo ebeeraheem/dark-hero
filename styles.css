@@ -1,0 +1,175 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+:root,
+:root.light {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --card-bg-color: #fafafa;
+}
+:root.dark {
+  --color-bg: #263238;
+  --color-fg: #ffffff;
+  --card-bg-color: #607d8b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  margin: 1.5em 0;
+  height: 90dvh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  align-items: center;
+
+  background-color: black;
+  color: white;
+}
+
+header {
+  display: flex;
+  width: 85%;
+  margin-inline: auto;
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+nav {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  /* align-items: center; */
+  gap: 40px;
+}
+
+ul li {
+  /* list-style: none; */
+  display: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+  padding: 0.3em 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 90%;
+  align-self: center;
+
+  color: white;
+}
+
+.create {
+  /* background-color: #28096b; */
+  background-color: #100033;
+
+  margin-left: 0.5em;
+  margin-right: 2em;
+}
+
+/* Main Hero */
+.overlay-container {
+  height: calc(100dvh - 100px);
+  max-width: 90%;
+  margin: auto;
+  padding: 3em 20%;
+  background: url(images/hero.jpg) center/cover no-repeat;
+  border-radius: 30px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 3em;
+
+  position: relative;
+}
+
+.overlay-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.content h1 {
+  margin-block: 0.5em;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.content p {
+  line-height: 1.5;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
