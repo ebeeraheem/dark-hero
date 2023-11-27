@@ -1,5 +1,7 @@
 const isDarkMode = document.querySelector(".checkbox");
 
+isDarkMode.checked = true;
+
 const logo = document.querySelector(".logo");
 
 isDarkMode.onchange = (e) => {
