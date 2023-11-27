@@ -2,14 +2,27 @@
 
 :root,
 :root.light {
-  --color-bg: #ffffff;
-  --color-fg: #000000;
-  --card-bg-color: #fafafa;
+  --bg-color: #ffffff;
+  --fg-color: #000000;
+  --text-color: #000000;
+  --toggle-color: #522ba7;
+  --toggle-text: #ffffff;
+  --overlay-color: #c68fdf88;
+
+  --hover-pri: #522ba729;
+  --hover-sec: #522ba7a1;
 }
+
 :root.dark {
-  --color-bg: #263238;
-  --color-fg: #ffffff;
-  --card-bg-color: #607d8b;
+  --bg-color: #000000;
+  --fg-color: #ffffff;
+  --text-color: #ffffff;
+  --toggle-color: #28096b;
+  --toggle-text: #ffffff;
+  --overlay-color: #00000088;
+
+  --hover-pri: #8d70cac2;
+  --hover-sec: #7f55d982;
 }
 
 * {
@@ -27,8 +40,8 @@ body {
   grid-template-rows: 50px 1fr;
   align-items: center;
 
-  background-color: black;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
 }
 
 header {
@@ -67,15 +80,23 @@ a {
   font-size: 90%;
   align-self: center;
 
-  color: white;
+  color: var(--text-color);
+}
+
+a:not(.create):hover {
+  background-color: var(--hover-pri);
 }
 
 .create {
-  /* background-color: #28096b; */
-  background-color: #100033;
+  background-color: var(--toggle-color);
+  color: var(--toggle-text);
 
   margin-left: 0.5em;
   margin-right: 2em;
+}
+
+.create:hover {
+  background-color: var(--hover-sec);
 }
 
 /* Main Hero */
@@ -103,7 +124,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--overlay-color);
   border-radius: 30px;
 }
 
@@ -160,7 +181,7 @@ a {
   border-radius: 50%;
   left: 10%;
   bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
+  box-shadow: inset 8px -4px 0px 0px #ccc;
   background: var(--background);
   transition: 0.5s;
 }
